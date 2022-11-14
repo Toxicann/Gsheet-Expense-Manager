@@ -12,7 +12,7 @@ class TransactionItem extends StatelessWidget {
   }) : super(key: key);
 
   final String transactionName;
-  final String transactionAmount;
+  final double transactionAmount;
   final ExpenditureType transactionType;
 
   @override

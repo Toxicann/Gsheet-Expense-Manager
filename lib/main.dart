@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'widgets/top_card/top_card.dart';
 import 'widgets/transactions_list/transactions.dart';
+import 'widgets/transactions_list/transactions_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,13 +23,31 @@ class MyApp extends StatelessWidget {
           seedColor: const Color(0xff17991b),
         ),
       ),
-      home: const RootApp(),
+      home: RootApp(),
     );
   }
 }
 
 class RootApp extends StatelessWidget {
-  const RootApp({super.key});
+  RootApp({super.key});
+
+  List<Map<String, dynamic>> transactionsItems = [
+    {
+      "name": "Food",
+      "amount": 200.46,
+      "type": ExpenditureType.expenses,
+    },
+    {
+      "name": "Salary",
+      "amount": 1234,
+      "type": ExpenditureType.incomes,
+    },
+    {
+      "name": "Games",
+      "amount": 600,
+      "type": ExpenditureType.expenses,
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,28 +60,9 @@ class RootApp extends StatelessWidget {
               child: TopCardWidget(),
             ),
             Expanded(
-              child: Container(
-                // color: Colors.blueAccent,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Column(
-                    children: const [
-                      TransactionItem(
-                        transactionName: "Transactions",
-                        transactionAmount: "200",
-                        transactionType: ExpenditureType.incomes,
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      TransactionItem(
-                        transactionName: "Food",
-                        transactionAmount: "500",
-                        transactionType: ExpenditureType.expenses,
-                      )
-                    ],
-                  ),
-                ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: TransactionList(transactionsItems: transactionsItems),
               ),
             ),
             Container(
