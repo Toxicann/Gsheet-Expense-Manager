@@ -1,7 +1,9 @@
 import 'package:antdesign_icons/antdesign_icons.dart';
+import 'package:expense_manager/helpers/enums.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/top_card/top_card.dart';
+import 'widgets/transactions_list/transactions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,51 +46,19 @@ class RootApp extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        height: 50,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  const CircleAvatar(
-                                    backgroundColor: Colors.white,
-                                    child: Icon(
-                                      AntIcons.dollarCircleFilled,
-                                      color: Colors.grey,
-                                      size: 32,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Transactions",
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      letterSpacing: 1,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.grey.shade600,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                "\$200",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  letterSpacing: 1,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.green,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                    children: const [
+                      TransactionItem(
+                        transactionName: "Transactions",
+                        transactionAmount: "200",
+                        transactionType: ExpenditureType.incomes,
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      TransactionItem(
+                        transactionName: "Food",
+                        transactionAmount: "500",
+                        transactionType: ExpenditureType.expenses,
                       )
                     ],
                   ),
