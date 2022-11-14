@@ -1,7 +1,7 @@
 import 'package:antdesign_icons/antdesign_icons.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/top_card.dart';
+import 'widgets/top_card/top_card.dart';
 
 void main() {
   runApp(const MyApp());
