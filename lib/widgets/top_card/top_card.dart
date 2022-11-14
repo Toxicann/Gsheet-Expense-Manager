@@ -1,10 +1,11 @@
+import 'package:expense_manager/google_sheets_api.dart';
 import 'package:flutter/material.dart';
 
 import '../../helpers/enums.dart';
 import 'expenditure_stats.dart';
 
 class TopCardWidget extends StatelessWidget {
-  const TopCardWidget({
+  TopCardWidget({
     Key? key,
   }) : super(key: key);
 
@@ -43,7 +44,7 @@ class TopCardWidget extends StatelessWidget {
             ),
           ),
           Text(
-            "\$ 100000",
+            "\$ ${GoogleSheetsApi.income - GoogleSheetsApi.expenses}",
             style: TextStyle(
               letterSpacing: 2,
               fontSize: 40,
@@ -55,11 +56,13 @@ class TopCardWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 CardTotalExpenditureStats(
+                  totalTransaction: GoogleSheetsApi.income.toString(),
                   type: ExpenditureType.incomes,
                 ),
                 CardTotalExpenditureStats(
+                  totalTransaction: GoogleSheetsApi.expenses.toString(),
                   type: ExpenditureType.expenses,
                 ),
               ],
@@ -70,4 +73,3 @@ class TopCardWidget extends StatelessWidget {
     );
   }
 }
-

@@ -40,7 +40,7 @@ class CardTotalExpenditureStats extends StatelessWidget {
               ),
             ),
             Text(
-              totalTransaction ?? "\$200",
+              totalTransaction ?? "\$0",
               style: TextStyle(
                 color: Colors.grey.shade800,
                 fontSize: 16,
