@@ -1,0 +1,1 @@
+enum ExpenditureType {expenses, incomes}
