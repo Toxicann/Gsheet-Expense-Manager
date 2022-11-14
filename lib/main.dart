@@ -1,3 +1,4 @@
+import 'package:antdesign_icons/antdesign_icons.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/top_card.dart';
@@ -55,8 +56,36 @@ class RootApp extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Transactions"),
-                              Text("\$ 200"),
+                              Row(
+                                children: [
+                                  const CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    child: Icon(
+                                      AntIcons.dollarCircleFilled,
+                                      color: Colors.grey,
+                                      size: 32,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Transactions",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      letterSpacing: 1,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.grey.shade600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                "\$200",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  letterSpacing: 1,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.green,
+                                ),
+                              ),
                             ],
                           ),
                         ),

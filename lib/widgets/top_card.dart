@@ -68,7 +68,7 @@ class TopCardWidget extends StatelessWidget {
                           style: cardExpenditureTypeStyle(),
                         ),
                         Text(
-                          "\$ 200",
+                          "\$200",
                           style: cardExpenditureAmountStyle(),
                         ),
                       ],
@@ -89,7 +89,7 @@ class TopCardWidget extends StatelessWidget {
                           style: cardExpenditureTypeStyle(),
                         ),
                         Text(
-                          "\$ 200",
+                          "\$200",
                           style: cardExpenditureAmountStyle(),
                         ),
                       ],
