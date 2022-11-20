@@ -40,13 +40,15 @@ class GoogleSheetsApi {
             : ExpenditureType.incomes,
       });
     }
-    await countIncome();
-    await countExpense();
+    countIncome();
+    countExpense();
     isLoading = false;
+    log("transactions: $totalRows");
     log("transactions: $transactions");
   }
 
   static countIncome() {
+    income = 0;
     for (var element in transactions) {
       if (element["type"] == ExpenditureType.incomes) {
         income += double.parse(element["amount"]);
@@ -56,11 +58,27 @@ class GoogleSheetsApi {
   }
 
   static countExpense() {
+    expenses = 0;
     for (var element in transactions) {
       if (element["type"] == ExpenditureType.expenses) {
         expenses += double.parse(element["amount"]);
       }
     }
     log("totalIncome: $expenses");
+  }
+
+  static Future newTransactions(
+      {required type, required amount, required isIncome}) async {
+    transactions.add({
+      "name": type,
+      "amount": amount,
+      "type": !isIncome ? ExpenditureType.expenses : ExpenditureType.incomes,
+    });
+    countIncome();
+    countExpense();
+    totalRows++;
+    await _workSheet!.values.appendRow(
+      [type, amount, isIncome ? "Income" : "Expense"],
+    );
   }
 }

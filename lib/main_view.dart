@@ -158,6 +158,7 @@ class _MainViewState extends State<MainView> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: MyTextField(
+                        isAmount: true,
                         textController: amountController,
                         validator: (value) =>
                             value!.isEmpty ? "Field required" : null,
@@ -170,10 +171,18 @@ class _MainViewState extends State<MainView> {
                 TextButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      
+                      GoogleSheetsApi.newTransactions(
+                        type: nameController.text,
+                        amount: amountController.text,
+                        isIncome: isIncome,
+                      );
+                      setState(
+                        () {},
+                      );
+
                       reset();
                       Navigator.pop(context);
-                    }
+                    } 
                   },
                   child: const Text("Accept"),
                 ),
