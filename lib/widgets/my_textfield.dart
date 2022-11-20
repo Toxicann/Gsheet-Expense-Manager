@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
-  MyTextField({
+  const MyTextField({
     Key? key,
     this.validator,
     required this.textController,
@@ -10,11 +10,11 @@ class MyTextField extends StatelessWidget {
     this.isAmount = false,
   }) : super(key: key);
 
-  bool isAmount;
-  TextEditingController textController;
+  final bool isAmount;
+  final TextEditingController textController;
   // bool autoValidateMode;
-  FormFieldValidator<String>? validator;
-  String? hintText;
+  final FormFieldValidator<String>? validator;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {

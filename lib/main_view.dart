@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
@@ -43,14 +42,13 @@ class _MainViewState extends State<MainView> {
   setstate() {
     setState(() {});
   }
-  
+
   @override
   void dispose() {
     nameController.dispose();
     amountController.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -80,11 +78,6 @@ class _MainViewState extends State<MainView> {
               const CircularProgressIndicator(),
               const Spacer(),
             ],
-            Container(
-              child: const Center(
-                child: Text("Footer a.k.a button"),
-              ),
-            ),
           ],
         ),
         floatingActionButton: FloatingActionButton(

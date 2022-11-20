@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color(0xff17991b),
         ),
       ),
-      home: MainView(),
+      home: const MainView(),
     );
   }
 }
