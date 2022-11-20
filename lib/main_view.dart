@@ -40,12 +40,17 @@ class _MainViewState extends State<MainView> {
     isIncome = false;
   }
 
+  setstate() {
+    setState(() {});
+  }
+  
   @override
   void dispose() {
     nameController.dispose();
     amountController.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -176,13 +181,10 @@ class _MainViewState extends State<MainView> {
                         amount: amountController.text,
                         isIncome: isIncome,
                       );
-                      setState(
-                        () {},
-                      );
-
                       reset();
                       Navigator.pop(context);
-                    } 
+                      setstate();
+                    }
                   },
                   child: const Text("Accept"),
                 ),
