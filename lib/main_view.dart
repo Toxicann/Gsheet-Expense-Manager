@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
@@ -43,7 +42,7 @@ class _MainViewState extends State<MainView> {
   setstate() {
     setState(() {});
   }
-  
+
   @override
   void dispose() {
     nameController.dispose();
@@ -62,8 +61,8 @@ class _MainViewState extends State<MainView> {
         backgroundColor: Colors.grey.shade300,
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(20),
+            const Padding(
+              padding: EdgeInsets.all(20),
               child: TopCardWidget(),
             ),
             if (!GoogleSheetsApi.isLoading)
@@ -80,11 +79,7 @@ class _MainViewState extends State<MainView> {
               const CircularProgressIndicator(),
               const Spacer(),
             ],
-            Container(
-              child: const Center(
-                child: Text("Footer a.k.a button"),
-              ),
-            ),
+           
           ],
         ),
         floatingActionButton: FloatingActionButton(
