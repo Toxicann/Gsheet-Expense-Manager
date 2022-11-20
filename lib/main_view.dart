@@ -50,7 +50,6 @@ class _MainViewState extends State<MainView> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     if (GoogleSheetsApi.isLoading && !timerHasStarted) {
@@ -61,8 +60,8 @@ class _MainViewState extends State<MainView> {
         backgroundColor: Colors.grey.shade300,
         body: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(20),
+            Padding(
+              padding: const EdgeInsets.all(20),
               child: TopCardWidget(),
             ),
             if (!GoogleSheetsApi.isLoading)
@@ -79,7 +78,6 @@ class _MainViewState extends State<MainView> {
               const CircularProgressIndicator(),
               const Spacer(),
             ],
-           
           ],
         ),
         floatingActionButton: FloatingActionButton(

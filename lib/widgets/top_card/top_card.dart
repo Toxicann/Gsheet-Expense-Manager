@@ -5,7 +5,8 @@ import '../../helpers/enums.dart';
 import 'expenditure_stats.dart';
 
 class TopCardWidget extends StatelessWidget {
-  const TopCardWidget({
+  // ignore: prefer_const_constructors_in_immutables
+  TopCardWidget({
     Key? key,
   }) : super(key: key);
 
